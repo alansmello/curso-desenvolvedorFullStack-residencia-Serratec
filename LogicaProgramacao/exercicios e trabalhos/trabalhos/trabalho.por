@@ -22,16 +22,19 @@ negativo.
     }
 
     faca{
-    	
-      escreva("0  1  2  3  4  5  6  7  8  9 10 11\n\n")
+    	escreva("######################################\n")
+    	escreva("              SALA DE CINEMA          \n") 
+    	escreva("######################################\n")   
+     escreva("0  1  2  3  4  5  6  7  8  9 10 11    \n")
+     escreva("--------------------------------------\n")
       para(l = 0; l < 10; l++){
         para(c = 0; c < 12; c++){
           escreva(sala[l][c], "  ")
         }
-        escreva("  ", l, "\n")
+        escreva(" |", l, "\n")
       }
   
-      escreva("Digite linha e coluna da poltrona desejada:\n")
+      escreva("\nDigite linha e coluna da poltrona desejada:\n")
       leia(linha, coluna)
   
       se(linha > 9 ou coluna > 11){
@@ -42,7 +45,10 @@ negativo.
       	}senao{
       	
             sala[linha][coluna] = 1
-            escreva("\nReserva realizada com sucesso!!!\n")
+            escreva("__________________________________\n")
+            escreva("  RESERVA REALIZADA COM SUCESSO!!!\n")
+           
+            
             reservas++
       	 }}
     }enquanto(linha>=0 e coluna>=0)
@@ -55,7 +61,7 @@ negativo.
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 711; 
+ * @POSICAO-CURSOR = 1674; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

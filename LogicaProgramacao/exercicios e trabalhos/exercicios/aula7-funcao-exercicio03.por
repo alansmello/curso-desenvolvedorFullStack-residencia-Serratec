@@ -1,6 +1,10 @@
 programa
 {
-	
+/*
+	Faça um programa que leia duas notas
+	Crie uma função para calcular a média
+	Criar uma funcao para verificar a situação se a media >=7 Aprovado
+ */
 	funcao inicio()
 	{
 		real nota1, nota2, media
@@ -40,7 +44,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 329; 
+ * @POSICAO-CURSOR = 138; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
