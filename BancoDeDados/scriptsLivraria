@@ -1,0 +1,92 @@
+create database livraria;
+
+
+CREATE TABLE Cliente (
+    codigo_cliente serial PRIMARY KEY,
+    nome varchar(30) not NULL,
+    telefone varchar(11),
+    cpf varchar(11),
+    cnpj varchar(14),
+    razao_social varchar(30),
+    tipo_cliente char
+);
+
+INSERT INTO cliente (nome, telefone,cpf, cnpj, razao_social,tipo_cliente)
+                      VALUES('Ana','2422452232','72345678901',null,null,'F');
+
+INSERT INTO cliente (nome, telefone, cpf, cnpj, razao_social,tipo_cliente)
+                      VALUES('Pão de Açúcar','2122352232',null,'12345678901234','Extra LTDA','J');
+
+INSERT INTO cliente (nome, telefone,cpf, cnpj, razao_social,tipo_cliente)
+                      VALUES('Joana','2422482232','42345678901',null,null,'F');
+
+
+INSERT INTO cliente (nome, telefone,cpf, cnpj, razao_social,tipo_cliente)
+                      VALUES('Joaquim','2422473232','72345678901',null,null,'F');
+
+INSERT INTO cliente (nome, telefone,cpf, cnpj, razao_social,tipo_cliente)
+                      VALUES('Gilberto','2422492232','22345678901',null,null,'F');
+
+INSERT INTO cliente (nome, telefone, cpf, cnpj, razao_social,tipo_cliente)
+                      VALUES('Loja da Esquina','3122352232',null,'22345678901237','XPTO Comercio LTDA','J');
+                      
+                     
+select * from cliente;
+
+CREATE TABLE compra(
+	numero_nota int PRIMARY KEY, 
+	data_compra date, 
+	codigo_cliente int,
+	FOREIGN KEY (codigo_cliente) REFERENCES cliente(codigo_cliente)
+);
+					
+
+
+
+INSERT INTO compra (numero_nota,data_compra,codigo_cliente) VALUES(12,'15-03-2022',1);
+INSERT INTO compra (numero_nota,data_compra,codigo_cliente) VALUES(13,'18-03-2022',2);
+INSERT INTO compra (numero_nota,data_compra,codigo_cliente) VALUES(122,'19-03-2022',1);
+INSERT INTO compra (numero_nota,data_compra,codigo_cliente) VALUES(121,'22-03-2022',3);
+
+
+CREATE TABLE editora(codigo_editora serial PRIMARY KEY, nome varchar(30), 
+telefone varchar(11), gerente varchar(30));
+
+INSERT INTO editora (nome, telefone, gerente) VALUES ('Editora Vozes','2422492232','Marcos');
+INSERT INTO editora (nome, telefone, gerente) VALUES ('Editora Ciência Moderna','2122492232','Amarildo');
+INSERT INTO editora (nome, telefone, gerente) VALUES ('Editora Campus','2122482232','José');
+INSERT INTO editora (nome, telefone, gerente) VALUES ('Editora Saraiva','2122491232','Sergio');
+
+
+CREATE TABLE livro (
+	isbn varchar(10) PRIMARY KEY, 
+	autor varchar(30), 
+	descricao varchar(30), 
+	quantidade_estoque SMALLINT,
+	preco NUMERIC CHECK (preco > 0) NOT NULL, 
+	codigo_editora int,
+	FOREIGN KEY(codigo_editora) REFERENCES editora(codigo_editora)
+);
+
+INSERT INTO livro (isbn,autor,descricao,quantidade_estoque,preco,codigo_editora) VALUES('32222','Rui Barbosa','Uma história qualquer',10,45.5,1);
+INSERT INTO livro (isbn,autor,descricao,quantidade_estoque,preco,codigo_editora) VALUES('12345','José de Vasconcelos','Redes',10,29.3,2);
+INSERT INTO livro (isbn,autor,descricao,quantidade_estoque,preco,codigo_editora) VALUES('31111','Laercio','Hardware',10,90.5,3);
+INSERT INTO livro (isbn,autor,descricao,quantidade_estoque,preco,codigo_editora) VALUES('34451','Ana Rita','React',10,88.25,2);
+INSERT INTO livro (isbn,autor,descricao,quantidade_estoque,preco,codigo_editora) VALUES('22232','Rui dos Santos','Angular',10,49.5,1);
+INSERT INTO livro (isbn,autor,descricao,quantidade_estoque,preco,codigo_editora) VALUES('12332','Alberto da Silva','Mobile',10,55.60,3);
+
+				
+CREATE TABLE itens_compra( 
+	numero_nota int, isbn varchar(10), 
+	quantidade smallint DEFAULT 0,
+    valor_vendido numeric CHECK (valor_vendido > 0),
+    desconto numeric,
+    CONSTRAINT pk_itens_compra PRIMARY KEY(numero_nota,isbn),
+    FOREIGN KEY (numero_nota) REFERENCES compra(numero_nota),
+    FOREIGN KEY (isbn) REFERENCES livro(isbn)
+);
+
+INSERT INTO itens_compra(numero_nota,isbn,quantidade,valor_vendido,desconto) VALUES(12,'12345',10,29.3,0);
+INSERT INTO itens_compra(numero_nota,isbn,quantidade,valor_vendido,desconto) VALUES(12,'31111',2,90.5,0);
+INSERT INTO itens_compra(numero_nota,isbn,quantidade,valor_vendido,desconto) VALUES(121,'12345',3,29.3,0);
+INSERT INTO itens_compra(numero_nota,isbn,quantidade,valor_vendido,desconto) VALUES(121,'32222',4,45.5,0);
