@@ -1,0 +1,66 @@
+create database veiculo;
+
+create table marca(
+	cod_marca serial primary key, 
+	nome varchar(50)
+);
+
+insert into marca (nome) values('Hyunday');
+insert into marca (nome) values('Ford');
+insert into marca (nome) values('Renault');
+insert into marca (nome) values('Nissan');
+insert into marca (nome) values('Kia');
+insert into marca (nome) values('Fiat');
+insert into marca (nome) values('VW');
+
+create table modelo(
+	cod_modelo serial primary key,
+	descricao varchar(60), 
+	preco numeric,
+	cod_marca int,
+	foreign key (cod_marca) references marca(cod_marca) 
+	on update cascade on delete cascade
+);
+	
+insert into modelo (descricao,preco,cod_marca) values('Gol',30000,7);
+insert into modelo (descricao,preco,cod_marca) values('HB20',32000,1);
+insert into modelo (descricao,preco,cod_marca) values('HB20S',36000,1);
+insert into modelo (descricao,preco,cod_marca) values('Cerato',26200,5);
+insert into modelo (descricao,preco,cod_marca) values('Ka',23500,2);
+
+select * from modelo;
+
+select * from marca;
+
+select  descricao as nome, preco, nome as marca
+	from marca, modelo 
+	where marca.cod_marca = modelo.cod_marca;
+
+delete from marca 
+	where cod_marca = 2;
+
+insert into modelo (descricao,preco,cod_marca) values('Fox',45000,7);
+insert into modelo (descricao,preco,cod_marca) values('Creta',62000,1);
+insert into modelo (descricao,preco,cod_marca) values('HB20S',36000,1);
+insert into modelo (descricao,preco,cod_marca) values('Sportage',126200,5);
+
+
+select nome, count(modelo.cod_marca) 
+	from modelo, marca
+	where modelo.cod_marca = marca.cod_marca
+	group by nome
+	
+	
+create view view_juncao_modelo_marca 
+	as select modelo.cod_marca,nome, descricao 
+	from modelo, marca
+	where modelo.cod_marca = marca.cod_marca;
+
+
+select * from view_juncao_modelo_marca;
+
+
+select * from modelo m where cod_marca = 1
+union 
+select * from modelo m where cod_marca = 5;
+

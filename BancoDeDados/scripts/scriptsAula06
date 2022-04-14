@@ -1,0 +1,55 @@
+
+select count(*) from aula.produto;
+
+select count(*) as Quantidade_Itens from aula.produto;
+
+select sum(quantidade_estoque) as Quantidade_Itens from aula.produto;
+
+select avg(preco) as Quantidade_Itens from aula.produto;
+
+select round(avg(preco), 2) as Quantidade_Itens from aula.produto;
+
+select max(preco) as Quantidade_Itens from aula.produto;
+
+select min(preco) as Quantidade_Itens from aula.produto;
+
+select nome, sum(quantidade_estoque) 
+	from aula.produto 
+	group by nome --agrupa por nome
+	having sum(quantidade_estoque) > 30 --o having faz um filtro em cima do resultado do filtro group by
+	order by nome;
+	
+
+select nome, sum(quantidade_estoque) as soma 
+	from aula.produto p
+	where descricao = 'Carreteiro'
+	group by nome;
+
+-- JUNÇÃO COM WHERE
+select p.nome, p.preco, p.quantidade_estoque,p.codigo_categoria, c.descricao from aula.produto p, aula.categoria c
+	where p.codigo_categoria = c.codigo_categoria;
+	
+
+
+update aula.categoria  set descricao = 'Alimentos'
+	where codigo_categoria = 2;
+
+--JUNÇÃO COM INNER JOIN
+select p.nome, p.preco, p.quantidade_estoque, c.descricao
+	from aula.produto p
+	inner join aula.categoria c 
+	on p.codigo_categoria = c.codigo_categoria;
+	
+
+select *  from 	AULA.PRODUTO p
+	left join aula.categoria c 
+	on c.codigo_categoria = p.codigo_categoria;
+
+select *  from 	AULA.PRODUTO p
+	right join aula.categoria c 
+	on c.codigo_categoria = p.codigo_categoria;
+
+
+select *  from 	AULA.PRODUTO p
+	full join aula.categoria c 
+	on c.codigo_categoria = p.codigo_categoria;

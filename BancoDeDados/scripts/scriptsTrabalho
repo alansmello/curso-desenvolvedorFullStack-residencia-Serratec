@@ -1,0 +1,67 @@
+SQL de cração das tabelas (DDL):
+
+CREATE database ecommerce;
+
+CREATE TABLE categoria (
+    codigo serial PRIMARY KEY,
+    nome varchar(20),
+    descricao varchar(30)
+);
+
+
+CREATE TABLE funcionario (
+    codigo serial PRIMARY KEY,
+    nome varchar(30),
+    cpf varchar(11)
+);
+
+CREATE TABLE cliente (
+    codigo serial PRIMARY KEY,
+    email varchar(20),
+    cpf varchar(11),
+    nome_usuario varchar(10),
+    data_nascimento date,
+    nome varchar(30),
+    endereco varchar(40)
+);
+
+CREATE TABLE produto (
+    codigo serial PRIMARY KEY,
+    categoria_codigo int,
+    nome varchar(20),
+    descricao varchar(30),
+    quantidade_estoque int,
+    data_fabricacao date,
+    valor_unitario real,
+    FOREIGN KEY (categoria_codigo) REFERENCES categoria (codigo)
+);
+
+CREATE TABLE cadastro (
+    produto_codigo int,
+    funcionario_codigo int,
+    data_insercao date,
+    FOREIGN KEY (produto_codigo) REFERENCES produto (codigo),
+    FOREIGN KEY (funcionario_codigo) REFERENCES funcionario (codigo)
+);
+
+CREATE TABLE Pedido (
+    codigo serial PRIMARY KEY,
+    cliente_codigo int,
+    data_envio date,
+    data_entrega date,
+    FOREIGN KEY (cliente_codigo) REFERENCES cliente (codigo) ON DELETE CASCADE
+);
+
+CREATE TABLE item_pedido (
+    pedido_codigo int,
+    produto_codigo int,
+    desconto numeric,
+    quantidade int,
+    FOREIGN KEY (pedido_codigo) REFERENCES pedido (codigo),
+    FOREIGN KEY (produto_codigo) REFERENCES produto (codigo)
+);
+
+
+
+
+

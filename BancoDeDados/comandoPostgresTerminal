@@ -1,5 +1,0 @@
-sudo -i -u postgres
-psql
-senha:*******
-exit(sair)
-
