@@ -8,7 +8,7 @@ public class Imovel {
 	
 	public double calculateReadjustment() {
 		
-		if(this.tipo == "casa") {
+		if(this.tipo.equals("casa")) {
 			return this.valor * 1.05;
 		}else {
 			return this.valor * 1.08;
@@ -21,7 +21,7 @@ public class Imovel {
 		}else if(this.valor >= 10000 && this.valor <= 50000) {
 			System.out.println("Categoria B");
 		}else {
-			System.out.println("Categoria C");
+			System.out.println();
 		}
 	}
 }
