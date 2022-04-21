@@ -2,7 +2,10 @@ package br.com.serratec.entidade;
 
 public class CarroPasseio extends Veiculo {
 	private int qtdPortas;
-
+	
+	public CarroPasseio(String placa) {
+		super(placa);
+	}
 	public int getQtdPortas() {
 		return qtdPortas;
 	}
@@ -13,7 +16,7 @@ public class CarroPasseio extends Veiculo {
 	
 	@Override // Sobrescrever
 	public void acelerar() {
-		System.out.println("aumenteou a velocidade em 10KM");
+		System.out.println("aumentou a velocidade em 10KM");
 	}
 
 }

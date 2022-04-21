@@ -6,6 +6,9 @@ public class Veiculo {
 	protected String cor;
 	protected double ipva;
 	
+	public Veiculo(String placa) {
+		this.placa = placa;
+	}
 	
 	public String getChassi() {
 		return chassi;
@@ -33,7 +36,7 @@ public class Veiculo {
 	}
 	
 	public void acelerar() {
-		System.out.println("aumenteou a velocidade em 5KM");
+		System.out.println("aumentou a velocidade em 5KM");
 	}
 	
 
