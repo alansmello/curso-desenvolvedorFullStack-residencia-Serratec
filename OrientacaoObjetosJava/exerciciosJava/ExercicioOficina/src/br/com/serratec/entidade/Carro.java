@@ -1,6 +1,8 @@
 package br.com.serratec.entidade;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.Month;
 
 public class Carro extends Veiculo  {
 	private String categoria;
@@ -14,26 +16,29 @@ public class Carro extends Veiculo  {
 		return categoria;
 	}
 	
+	@Override
 	public double lavarVeiculo() {
-		return 0.0;
+		return valorCobrado += TipoServicos.LAVAGEM.getValorPorServico();
 	}
 
 	@Override
 	public double trocarOleo() {
-		// TODO Auto-generated method stub
-		return 0;
+		if(dataConserto.getDayOfWeek().equals(DayOfWeek.SATURDAY)) {
+			valorCobrado += TipoServicos.TROCA_OLEO.getValorPorServico() - 50;
+			return valorCobrado;
+		}
+		
+		
+		return valorCobrado += TipoServicos.TROCA_OLEO.getValorPorServico();
 	}
 
 	@Override
 	public double revisao() {
-		// TODO Auto-generated method stub
-		return 0;
+		if(dataConserto.getMonth().equals(Month.AUGUST)) {
+			return valorCobrado += TipoServicos.REVISAO.getValorPorServico() - (TipoServicos.REVISAO.getValorPorServico()*0.1);
+		}
+		
+			return valorCobrado += TipoServicos.REVISAO.getValorPorServico();
+	
 	}
-	
-	
-
-	
-	
-	
-	
 }
