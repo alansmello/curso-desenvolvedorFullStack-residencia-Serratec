@@ -17,9 +17,12 @@ public enum MarcasTV {
 	}
 	public static MarcasTV getMarcasByNomeMarca(String nomeMarca) {
 		MarcasTV[] vetorMarcas = MarcasTV.values();
+		
+		
 		for(MarcasTV marcaAtual : vetorMarcas) {
+			
 			String nomeMarcaMinusculo =  marcaAtual.getNomeMarca().toLowerCase();
-			if(nomeMarcaMinusculo.getNomeMarca().equals(nomeMarca)) {
+			if(nomeMarcaMinusculo.equals(nomeMarca)) {
 				return marcaAtual;
 			}
 		}

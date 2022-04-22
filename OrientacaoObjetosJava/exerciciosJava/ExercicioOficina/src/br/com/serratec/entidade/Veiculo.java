@@ -16,7 +16,7 @@ public abstract class Veiculo implements Oficina {
 
 	@Override
 	public String toString() {
-		return proprietario + "Veiculo [modelo=" + modelo + ", valorCobrado=" + valorCobrado + ", dataConserto=" + dataConserto + "]";
+		return "Veiculo [modelo=" + modelo + ", valorCobrado=" + valorCobrado + ", dataConserto=" + dataConserto + "]";
 	}
 
 	public double getValorCobrado() {

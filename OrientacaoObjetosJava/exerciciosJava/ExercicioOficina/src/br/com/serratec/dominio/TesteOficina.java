@@ -13,6 +13,8 @@ public class TesteOficina {
 		
 		c1.trocarOleo();
 		c1.revisao();
+		
+		System.out.println("Proprietário: " + alan.getNome());
 		System.out.println(c1);
 		
 		
