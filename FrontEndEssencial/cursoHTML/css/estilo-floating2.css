@@ -1,0 +1,41 @@
+body{
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: left;
+}
+h1{
+    margin: 0;
+    text-align: center;
+}
+h1::before{
+    content: "HTML";
+}
+h1::after{
+    content: "Estudando as tags básicas";
+}
+article{
+    background-color: gray;
+}
+article p::first-letter{
+    font-size: 50px;
+    color:green;
+}
+
+.coluna1, .coluna2{
+    background-color: #fa0;
+    float:left;
+    width:49%;
+    text-align: justify;
+    
+}
+
+.coluna2{
+    float:right;
+    
+}
+div{
+    text-align: center;
+    background-color: yellow;
+    text-decoration: dotted;
+    clear:both;
+}

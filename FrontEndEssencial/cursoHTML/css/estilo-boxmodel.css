@@ -1,0 +1,27 @@
+body{
+    font-family: Arial;
+    font-size: 24px;
+}
+
+.texto1, .texto2, .texto3{
+    text-align: justify;
+    width: 600px;
+    background-color: gray;
+}
+p{
+    margin: 10px;
+}
+.texto1{
+    border: 20px solid blue;
+    padding: 30px;
+
+}
+.texto2{
+    box-sizing: border-box;
+    border: 20px solid yellow;
+    padding: 30px;
+}
+.texto3{
+    background-color: green;
+    height: 30px;
+}

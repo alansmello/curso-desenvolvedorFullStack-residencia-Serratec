@@ -1,0 +1,20 @@
+.layout-cabecalho{
+    height: 80px;
+    border-bottom: 1px solid #ccc;
+}
+
+.layout-planos{
+    padding: 80px 0;
+}
+.layout-principal{
+    padding:80px;
+    background-color: green;
+}
+
+/* Com o sistema de grid não precisa mais utilizar o clear
+#planos::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+*/

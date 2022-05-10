@@ -1,0 +1,28 @@
+body{
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+/*p{
+    text-align: justify;
+    width: 600px;
+    border: 8px solid green;
+    background-color: gray;
+    padding: 20px 60px;
+    
+}*/
+p{
+    margin:0;
+}
+.texto1, .texto2{
+    text-align: justify;
+    width: 600px;
+    border: 6px solid green;
+}
+.texto1{
+    margin-left: 0px;
+}
+.texto2{
+    margin-left: 0px;
+}

@@ -1,0 +1,28 @@
+#titulo, .missao{
+    font-family: Verdana;
+}
+
+.destacar{
+    color: green;
+}
+
+.missao{
+    color: red;
+    font-weight: bold;
+    font-style: italic;
+}
+
+article strong{
+    color: brown;
+}
+
+article .missao strong{
+    color: yellow;
+}
+
+article > .texto > strong{
+    font-family: Impact;
+}
+article > .destacar > strong{
+    color: purple;
+}

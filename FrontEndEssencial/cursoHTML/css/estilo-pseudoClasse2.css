@@ -1,0 +1,17 @@
+.disciplinas{
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.disciplinas li{
+    color:blue;
+    border-bottom: 1px solid green;
+}
+.disciplinas li:first-child{
+    color: red;
+}
+.disciplinas li:last-child{
+    color: red;
+    border:none;
+}

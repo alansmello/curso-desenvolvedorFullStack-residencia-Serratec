@@ -1,0 +1,9 @@
+body{
+    font-size: 20px;
+    font-family: Arial;
+    text-align: justify;
+}
+img{
+    float: left;
+    margin-right: 20px;
+}
