@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Projeto Curso FrontEnd Essential</title>
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/componentes.css">
+</head>
+
+<body>
+    <header class="layout-cabecalho layout-cabecalho--home">
+        <div class="container">
+            <nav class="navegacao">
+                <img src="img/cabecalho.png" width="80" height="80" alt="www">
+                <div class="navegacao__menu">
+                    <button class="botao-menu">
+                        <img src="img/bars.png" alt="bars">
+                    </button>
+                    <ul class="menu js-menu">
+                        <li class="menu__item">
+                            <a href="#">Como funciona</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#">Planos e preços</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#">Contato</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="botao botao--login">Login</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="layout-principal">
+        <div class="container">
+            <div class="principal">
+                <h1 class="principal__titulo">A melhor internet banda larga do estado do Rio de Janeiro</h1>
+                <p class="principal__subtitulo"> Pacotes que cabem no seu bolso</p>
+                <a href="#planos">Veja os planos</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="layout-depoimento">
+        <div class="container">
+            <div class="depoimento">
+                <blockquote>
+                    Gostei muito da internet da empresa, nunca tive problemas com queda de conexão.
+                    Estou sastifeito com o serviço prestado.
+                </blockquote>
+                <div class="depoimento__autor">
+                    <img src="img/man.png" width="180" height="180" alt="José de Oliveira">
+                    <p>José de Oliveira</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="planos" class="layout-planos">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <article class="plano plano--basico">
+                        <h2 class="plano__cabecalho">Padrão</h2>
+                        <div class="plano__preco">89,90 /mês</div>
+                        <ul class="plano__caracteristicas">
+                            <li><strong>200 Mbps</strong> de internet</li>
+                            <li>Fibra Ótica</li>
+                            <li>Instalação R$100,00</li>
+                            <li>Primeiro Mês Gratuito</li>
+                        </ul>
+                        <footer class="plano__rodape">
+                            <a class="botao--assinar" href="assine.html">Assinar</a>
+                        </footer>
+                    </article>
+                </div>
+                <div class="col-sm-4">
+                    <article class="plano">
+                        <h2 class="plano__cabecalho">Intermediário</h2>
+                        <div class="plano__preco">119,90 /mês</div>
+                        <ul class="plano__caracteristicas">
+                            <li><strong>400 Mbps</strong> de internet</li>
+                            <li>Fibra Ótica</li>
+                            <li>Instalação R$50,00</li>
+                            <li>Primeiro Mês Gratuito</li>
+                        </ul>
+                        <footer class="plano__rodape">
+                            <a class="botao--assinar" href="assine.html">Assinar</a>
+                        </footer>
+                    </article>
+                </div>
+                <div class="col-sm-4 ultima-coluna">
+                    <article class="plano">
+                        <h2 class="plano__cabecalho">Avançado</h2>
+                        <div class="plano__preco">200,00 /mês</div>
+                        <ul class="plano__caracteristicas">
+                            <li><strong>800 Mbps</strong> de internet</li>
+                            <li>Fibra Ótica</li>
+                            <li>Instalação R$0,00</li>
+                            <li>Primeiro Mês Gratuito</li>
+                        </ul>
+                        <footer class="plano__rodape">
+                            <a class="botao--assinar" href="assine.html">Assinar</a>
+                        </footer>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="layout-rodape">
+        <div class="container">
+            <p>&copy; XPTO internet. Todos os direitos reservados.</p>
+        </div>
+
+    </footer>
+
+    <script src="js/app.js">
+
+    </script>
+</body>
+
+</html>

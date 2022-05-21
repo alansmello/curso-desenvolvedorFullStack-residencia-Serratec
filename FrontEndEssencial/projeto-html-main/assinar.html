@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de cadastro</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/componentes.css">
+
+</head>
+
+<body>
+    <header class="layout-cabecalho layout-cabecalho--home">
+        <div class="container">
+            <img src="img/cabecalho.png" width="80" height="80" alt="www">
+        </div>
+    </header>
+
+    <main class="layout-assinatura">
+        <div class="container">
+            <h1 class="titulo-formulario">Assinatura do Plano de Internet</h1>
+            <form action="#" method="post">
+                <div class="row">
+                    <div class="my-3 col-sm-12 col-md-12">
+                        <label for="nome" class="form-label">Nome:</label>
+                        <input id="nome" class="form-control" type="text" name="nome" placeholder="Digite seu nome" required="true" >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="my-3 col-sm-12 col-md-12">
+                        <label for="email" class="form-label">Email:</label>
+                        <input id="email" class="form-control" type="email" name="email" placeholder="Digite seu email" required="true">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="my-3 col-sm-3 col-md-3">
+                        <label for="telefone" class="form-label">Telefone:</label>
+                        <input id="telefone" class="form-control" type="text" name="telefone">
+                    </div>
+                    <div class="my-3 col-sm-3 col-md-3">
+                        <label for="data-nascimento" class="form-label">Data de Nascimento:</label>
+                        <input id="data-nascimento" class="form-control" type="date" name="data-nascimento">
+                    </div>
+                    <div class="my-3 col-sm-3 col-md-3">
+                        <label for="tipo-plano" class="form-label">Tipo de Plano de Internet:</label>
+                        <select id="tipo-plano" name="tipo-plano" class="form-select">
+                            <option value="P">Padrão</option>
+                            <option value="I">Intermediário</option>
+                            <option value="A">Avançado</option>
+                        </select>
+                    </div>
+                    <div class="my-3 col-sm-3 col-md-3">
+                        <label class="form-label">Serviço Adicional:</label>
+                        <div>
+                            <input id="tipo-servico" type="checkbox" name="tipo-servico" value="netflix">
+                            <label id="tipo-servico">Netflix</label>
+                            <input id="tipo-servico" type="checkbox" name="tipo-servico" value="prime">
+                            <label id="tipo-servico">Prime</label>
+                            <input id="tipo-servico" type="checkbox" name="tipo-servico" value="globoplay">
+                            <label id="tipo-servico">Globo Play</label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="my-3 col-sm-6 col-md-6">
+                        <label class="form-label">Avaliação do Atendimento:</label>
+                        <div>
+                            <input type="range" list="avaliacao">
+                            <datalist id="avaliacao">
+                                <option value="0" label="0%"></option>
+                                <option value="10" label="10"></option>
+                                <option value="20"></option>
+                                <option value="30"></option>
+                                <option value="40"></option>
+                                <option value="50"></option>
+                                <option value="60"></option>
+                                <option value="70"></option>
+                                <option value="80"></option>
+                                <option value="90"></option>
+                                <option value="100" label="100%"></option>
+                            </datalist>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="btn btn-primary">Enviar</button>
+                <input type="reset" value="Limpar" class="btn btn-secondary" >
+                
+            </form>
+        </div>
+    </main>
+
+    <footer class="layout-rodape">
+        <div class="container">
+            <p>&reg; Empresa XPTO Ltda. Todos os direitos reservados - 2022</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

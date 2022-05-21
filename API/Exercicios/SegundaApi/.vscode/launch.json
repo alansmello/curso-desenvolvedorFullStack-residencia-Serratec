@@ -1,0 +1,15 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-TerceiraAulaApplication<terceira-aula>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.serratec.terceiraaula.TerceiraAulaApplication",
+            "projectName": "terceira-aula",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

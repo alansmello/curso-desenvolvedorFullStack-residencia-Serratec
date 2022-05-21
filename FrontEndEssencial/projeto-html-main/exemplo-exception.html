@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exception</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        try {
+            document.write("Residência - 2022!");
+        } catch (error) {
+            document.write("Erro:" + error.message);
+        } finally {
+            document.write("<br> O finally sempre é executado");
+        }
+
+        try {
+            var num;
+            num = 10 / 0;
+            document.write("<br>" + num);
+        } catch (error) {
+            document.write("<br> Erro:" + error.message);
+        }
+
+        try {
+            var preco = prompt("Digite o preço:");
+            if (preco < 0) {
+                throw new Error("<br> Preço inválido! ");
+            }
+        } catch (e) {
+            document.write("<br> Erro:" + e.message + "Preço:" + preco);
+            //Insiro um valor padrão em caso de lançamento de exceção
+            preco = 0;
+        } finally{
+            document.write("<br> Preço:" + preco);
+        }
+
+    </script>
+
+</body>
+
+</html>
