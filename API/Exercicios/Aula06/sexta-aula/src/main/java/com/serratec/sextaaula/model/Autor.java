@@ -27,12 +27,11 @@ public class Autor {
     }
 
 
-    public Autor(String nome, Set<Livro> livros) {
+    public Autor(String nome) {
         this.nome = nome;
-        this.livros = livros;
+       
     }
-
-
+   
     public Integer getId() {
         return this.id;
     }

@@ -25,8 +25,8 @@ public class Categoria {
     public Categoria() {
     }
 
-    public Categoria( List<Livro> livros, String nome, String descricao) {
-        this.livros = livros;
+    public Categoria(  String nome, String descricao) {
+        
         this.nome = nome;
         this.descricao = descricao;
     }

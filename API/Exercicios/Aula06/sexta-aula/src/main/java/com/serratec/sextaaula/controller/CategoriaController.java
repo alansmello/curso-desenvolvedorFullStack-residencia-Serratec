@@ -2,6 +2,7 @@ package com.serratec.sextaaula.controller;
 
 import java.util.List;
 
+import com.serratec.sextaaula.exception.NotFoundException;
 import com.serratec.sextaaula.model.Categoria;
 import com.serratec.sextaaula.service.CategoriaService;
 
@@ -12,12 +13,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
@@ -35,7 +36,7 @@ public class CategoriaController {
     }
 
     @GetMapping("/{id}")
-        public ResponseEntity<Categoria> getOne(@PathVariable Integer id){
+        public ResponseEntity<Categoria> getOne(@PathVariable Integer id) throws NotFoundException{
         HttpHeaders headers = new HttpHeaders();
         headers.add("Categoria", "Categoria retornada com sucesso");
         return new ResponseEntity<Categoria>(service.findOne(id), headers, HttpStatus.ACCEPTED);
@@ -50,14 +51,14 @@ public class CategoriaController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> putAtualizarCategoria(@RequestBody Categoria categoria, @PathVariable Integer id){
+    public ResponseEntity<?> putAtualizarCategoria(@RequestBody Categoria categoria, @PathVariable Integer id) throws NotFoundException{
         HttpHeaders headers = new HttpHeaders();
         headers.add("Categoria", "Atualizada com sucesso");
         return new ResponseEntity<>(service.atualizarCategoria(id, categoria), headers, HttpStatus.OK);
     }
     
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteCategoria(@PathVariable Integer id){
+    public ResponseEntity<?> deleteCategoria(@PathVariable Integer id) throws NotFoundException{
         HttpHeaders headers = new HttpHeaders();
         headers.add("Categoria", "Deletada com sucesso");
         return new ResponseEntity<>(service.deletarCategoria(id), headers, HttpStatus.OK);

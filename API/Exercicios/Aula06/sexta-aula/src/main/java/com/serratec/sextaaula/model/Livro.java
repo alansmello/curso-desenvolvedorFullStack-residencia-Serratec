@@ -7,7 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
@@ -25,9 +24,9 @@ public class Livro {
     private Categoria categoriaId;
 
     @ManyToMany
-    @JoinTable(name="livro_autor", 
+    /*@JoinTable(name="livro_autor", 
         joinColumns = @JoinColumn(name = "livro_fk", referencedColumnName = "id"),
-        inverseJoinColumns = @JoinColumn(name= "autor_fk", referencedColumnName = "id"))
+        inverseJoinColumns = @JoinColumn(name= "autor_fk", referencedColumnName = "id"))*/
     private Set<Autor> autores;
 
 
@@ -36,10 +35,10 @@ public class Livro {
     }
 
 
-    public Livro( String nome, Categoria categoriaId, Set<Autor> autores) {
+    public Livro( String nome, Categoria categoriaId) {
         this.nome = nome;
         this.categoriaId = categoriaId;
-        this.autores = autores;
+       
     }
 
 

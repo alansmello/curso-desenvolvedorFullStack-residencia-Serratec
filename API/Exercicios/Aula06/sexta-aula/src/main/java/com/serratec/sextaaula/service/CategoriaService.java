@@ -3,6 +3,7 @@ package com.serratec.sextaaula.service;
 import java.util.List;
 import java.util.Optional;
 
+import com.serratec.sextaaula.exception.NotFoundException;
 import com.serratec.sextaaula.model.Categoria;
 import com.serratec.sextaaula.repository.CategoriaRepository;
 
@@ -25,9 +26,11 @@ public class CategoriaService {
         return categoria.findAll(sort);
     }
 
-    public Categoria findOne(Integer id){
+    public Categoria findOne(Integer id) throws NotFoundException{
         Optional<Categoria> optional = categoria.findById(id);
-        
+        if(optional.isEmpty()){
+            throw new NotFoundException("Categoria não encontrada!");
+        }
         return optional.get();
     }
 
@@ -38,8 +41,11 @@ public class CategoriaService {
 
     }
 
-    public Categoria atualizarCategoria(Integer id, Categoria catNova){
+    public Categoria atualizarCategoria(Integer id, Categoria catNova) throws NotFoundException{
         Optional<Categoria> optional = categoria.findById(id);
+        if(optional.isEmpty()){
+            throw new NotFoundException("Categoria não encontrada!");
+        }
         Categoria oldCategoria = optional.get();
         
         if(catNova.getNome() != null && !catNova.getNome().equals("")){
@@ -51,7 +57,12 @@ public class CategoriaService {
         return oldCategoria;
     }
 
-    public String deletarCategoria(Integer id){
+    public String deletarCategoria(Integer id) throws NotFoundException{
+        Optional<Categoria> optional = categoria.findById(id);
+
+        if(optional.isEmpty()){
+            throw new NotFoundException("Categoria não encontrada!");
+        }
         categoria.deleteById(id);
         return "Categoria deletada com Sucesso";
     }
