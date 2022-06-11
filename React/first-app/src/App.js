@@ -1,6 +1,7 @@
 import { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import Botao from "./components/Botao";
 
 function App() {
   const [contador, setContador] = useState(0);
@@ -14,6 +15,7 @@ function App() {
         </p>
         <button onClick={() => setContador(contador + 3)}>+ 3</button>
         <p>{contador}</p>
+        <Botao nome="Alan"/>
       </header>
     </div>
   );
