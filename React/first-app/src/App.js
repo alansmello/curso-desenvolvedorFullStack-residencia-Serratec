@@ -1,23 +1,34 @@
-import { useState } from "react";
-import logo from "./logo.svg";
+
 import "./App.css";
-import Botao from "./components/Botao";
-
+import Produto from "./components/Produto/index";
+import {Home} from "./pages/Home";
+const produtos = [{
+  nome: "Teclado",
+  descricao: "hjdashjahsdjhj",
+  imagem: "https://images-ext-2.discordapp.net/external/sU5QDXXeQ8wywq0pMpkUT1MPfDxkTQ4Yoru7DuimQG0/https/www.glosarioit.com/GloImg/Teclado.webp",
+  preco: "150,00",
+  quantidade: "12"
+},
+{
+  nome: "Monitor",
+  descricao: "dsdddddddddddddd",
+  imagem: "https://images-ext-2.discordapp.net/external/sU5QDXXeQ8wywq0pMpkUT1MPfDxkTQ4Yoru7DuimQG0/https/www.glosarioit.com/GloImg/Teclado.webp",
+  preco: "250,00",
+  quantidade: "8"
+}]
+/* {produtos.map((item) => {
+  return <Produto nome={item.nome} descricao={item.descricao} imagem={item.imagem} preco={item.preco} quantidade={item.quantidade} />
+})} */
 function App() {
-  const [contador, setContador] = useState(0);
-
+   
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <button onClick={() => setContador(contador + 3)}>+ 3</button>
-        <p>{contador}</p>
-        <Botao nome="Alan"/>
-      </header>
+    <div>
+      
+      <Home/>
+
+
     </div>
+   
   );
 }
 

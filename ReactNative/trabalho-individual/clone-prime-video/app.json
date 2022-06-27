@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "clone-prime-video",
+    "slug": "clone-prime-video",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
