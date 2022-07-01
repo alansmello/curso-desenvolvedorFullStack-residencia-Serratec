@@ -4,7 +4,7 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#030110',
+        backgroundColor: '#0f171e',
         alignItems: 'flex-start',
         
       },
@@ -68,7 +68,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between'
   },
   icon:{
-    backgroundColor:'#030110',
+    backgroundColor:'#0f171e',
     borderWidth:1,
     borderColor:'gray',
     marginTop:30,
@@ -138,7 +138,7 @@ export const styles = StyleSheet.create({
     fontSize:12
   },
   comment:{
-    backgroundColor:'#030110',
+    backgroundColor:'#0f171e',
     marginTop:12
   },
   textThree:{

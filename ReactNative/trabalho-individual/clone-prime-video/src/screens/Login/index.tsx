@@ -4,12 +4,12 @@ import Amazon from '../../assets/images/amazon.png';
 import { Checkbox } from 'react-native-paper';
 import { styles } from "./styles";
 
-export const Login = ()=>{
+export const Login = ({navigation})=>{
     
   
-    const [checked, setChecked] = React.useState(false);
-    const[focusOne,setFocusOne] = useState(false);
-    const[focusTwo,setFocusTwo] = useState(false);
+    const [checked, setChecked] = React.useState<boolean>(false);
+    const[focusOne,setFocusOne] = useState<boolean>(false);
+    const[focusTwo,setFocusTwo] = useState<boolean>(false);
     const customStyleOne = focusOne ? styles.inputTwo : styles.input;
     const customStyleTwo = focusTwo ? styles.inputTwo : styles.input;
     
@@ -28,6 +28,7 @@ export const Login = ()=>{
         placeholder = "Email ou numero de Telefone"
         placeholderTextColor="gray"
         onFocus={()=> setFocusOne(true)}
+        onBlur={()=> setFocusOne(false)}
         style={customStyleOne}
         
         
@@ -37,7 +38,9 @@ export const Login = ()=>{
         placeholder = "Senha Amazon"
         placeholderTextColor="gray"
         onFocus={()=> setFocusTwo(true)}
+        onBlur={()=> setFocusTwo(false)}
         style={customStyleTwo}
+        secureTextEntry
 
         />
         <View style={styles.checkSenha}>
@@ -58,7 +61,7 @@ export const Login = ()=>{
         <TouchableOpacity
             style={styles.button}
             activeOpacity={0.9}
-           // onPress={addSkillToList}
+            onPress={()=> navigation.navigate("Filme")}
         >
             <Text style={styles.buttonText}>
                 Fazer Login
@@ -75,7 +78,7 @@ export const Login = ()=>{
         <Text style={styles.newInAmazonText}>_________________  É novo na Amazom ?  _________________</Text>
         <TouchableOpacity
             style={styles.buttonTwo}
-            // onPress={addSkillToList}
+           
             >
             <Text style={styles.buttonTextTwo}>
                 Criar uma nova conta Amazon

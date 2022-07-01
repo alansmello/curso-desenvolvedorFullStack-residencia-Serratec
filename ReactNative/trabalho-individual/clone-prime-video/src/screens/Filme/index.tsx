@@ -2,10 +2,10 @@ import React from 'react';
 import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { styles } from './styles';
 import Professor from '../../assets/images/theProfessor.jpg';
-import { Avatar, Button } from 'react-native-paper';
+import { Avatar } from 'react-native-paper';
 
 
-export const Filme = () => {
+export const Filme = ({navigation}) => {
     return (
         <View style={styles.container}>
             <ScrollView>
@@ -19,7 +19,7 @@ export const Filme = () => {
                     <TouchableOpacity
                         style={styles.button}
                         activeOpacity={0.9}
-                    // onPress={addSkillToList}
+                        onPress={()=> navigation.navigate("Login")}
                     >
                         <Avatar.Icon
                             size={50}

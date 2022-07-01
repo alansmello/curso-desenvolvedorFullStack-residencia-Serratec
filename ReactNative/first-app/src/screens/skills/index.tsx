@@ -3,8 +3,10 @@ import { View, Text, Image, TouchableOpacity, TextInput, FlatList } from "react-
 import { styles } from "./styles";
 
 import SkillCircle from "../../assets/images/alan.jpg";
+import { Botao } from "../../components/Botao";
+import { CartaHabilidade } from "../../components/CartaHabilidade";
 
-interface SkillData {
+export interface SkillData {
     id: string,
     name: string,
 }
@@ -46,14 +48,18 @@ export const Skills = () => {
             onChangeText={(e) => setSkill(e)}
         />
 
-        <TouchableOpacity
+        {/* <TouchableOpacity
             style={styles.button}
             onPress={addSkillToList}
         >
             <Text style={styles.buttonText}>
                 Add
             </Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
+        
+        <Botao title= 'Add' onPress={addSkillToList}
+        activeOpacity={0.5}
+        />
 
         <Text style={[styles.title, { marginVertical: 20 }]}>
             My skills
@@ -62,12 +68,7 @@ export const Skills = () => {
         <FlatList
             data={skillList}
             renderItem={({ item, index }) =>
-                <TouchableOpacity style={styles.buttonSkill}>
-                    <Image source={SkillCircle} style={styles.image} />
-                    <Text style={styles.textSkill}>
-                        {item.name}
-                    </Text>
-                </TouchableOpacity>
+                <CartaHabilidade habilidade={item}/>
             }
             keyExtractor={item => item.id}
         />
