@@ -14,7 +14,7 @@ export const Routes = ()=>{
                 }}
             >
                 <Stack.Screen name="Login" component = {Login}/>
-                <Stack.Screen name="Filme" component={Filme} />
+                <Stack.Screen name="Filme" component= {Filme} />
             </Stack.Navigator>
         </NavigationContainer>
     )
