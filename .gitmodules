@@ -10,3 +10,6 @@
 [submodule "React/trabalho-grupo/Trabalho-React"]
 	path = React/trabalho-grupo/Trabalho-React
 	url = git@github.com:KrotVP/Trabalho-React.git
+[submodule "API/trabalho-grupo/Trabalho-Final-API-Restful"]
+	path = API/trabalho-grupo/Trabalho-Final-API-Restful
+	url = git@github.com:CristovaoSilvaMK77/Trabalho-Final-API-Restful.git
