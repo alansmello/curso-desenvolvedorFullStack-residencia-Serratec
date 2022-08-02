@@ -1,3 +1,6 @@
 [submodule "TrabalhoFinal/BackEnd/2022_1_T2M_SRM_back"]
 	path = TrabalhoFinal/BackEnd/2022_1_T2M_SRM_back
 	url = git@github.com:serratec/2022_1_T2M_SRM_back.git
+[submodule "TrabalhoFinal/FrontEnd/2022_1_T2M_SRM_front"]
+	path = TrabalhoFinal/FrontEnd/2022_1_T2M_SRM_front
+	url = git@github.com:serratec/2022_1_T2M_SRM_front.git
