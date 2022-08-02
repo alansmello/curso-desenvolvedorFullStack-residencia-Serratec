@@ -16,3 +16,6 @@
 [submodule "OrientacaoObjetosJava/trabalho-grupo/projeto-sistemaBancario-serratec"]
 	path = OrientacaoObjetosJava/trabalho-grupo/projeto-sistemaBancario-serratec
 	url = git@github.com:alansmello/projeto-sistemaBancario-serratec.git
+[submodule "FrontEndEssencial/trabalho-grupo/ProjetoFrontEnd"]
+	path = FrontEndEssencial/trabalho-grupo/ProjetoFrontEnd
+	url = git@github.com:Samirjc/ProjetoFrontEnd.git
