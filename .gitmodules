@@ -4,3 +4,6 @@
 [submodule "TrabalhoFinal/FrontEnd/2022_1_T2M_SRM_front"]
 	path = TrabalhoFinal/FrontEnd/2022_1_T2M_SRM_front
 	url = git@github.com:serratec/2022_1_T2M_SRM_front.git
+[submodule "ReactNative/trabalho-grupo/React-Nation-APP"]
+	path = ReactNative/trabalho-grupo/React-Nation-APP
+	url = git@github.com:tkyzfalcom/React-Nation-APP.git
