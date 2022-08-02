@@ -7,3 +7,6 @@
 [submodule "ReactNative/trabalho-grupo/React-Nation-APP"]
 	path = ReactNative/trabalho-grupo/React-Nation-APP
 	url = git@github.com:tkyzfalcom/React-Nation-APP.git
+[submodule "React/trabalho-grupo/Trabalho-React"]
+	path = React/trabalho-grupo/Trabalho-React
+	url = git@github.com:KrotVP/Trabalho-React.git
