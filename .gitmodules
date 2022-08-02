@@ -13,3 +13,6 @@
 [submodule "API/trabalho-grupo/Trabalho-Final-API-Restful"]
 	path = API/trabalho-grupo/Trabalho-Final-API-Restful
 	url = git@github.com:CristovaoSilvaMK77/Trabalho-Final-API-Restful.git
+[submodule "OrientacaoObjetosJava/trabalho-grupo/projeto-sistemaBancario-serratec"]
+	path = OrientacaoObjetosJava/trabalho-grupo/projeto-sistemaBancario-serratec
+	url = git@github.com:alansmello/projeto-sistemaBancario-serratec.git
